@@ -10,13 +10,13 @@ import {
   View,
 } from 'react-native';
 
+import button1 from '../components/Button1';
 
 export default Intro = ({img, button_name}) => {
     return (
     <View>
-      <Text>
-        {button_name}
-      </Text>
+      <Button1 button_name = {button_name}>
+      </Button1>
     </View>
     )
 }
