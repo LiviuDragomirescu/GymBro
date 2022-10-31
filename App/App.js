@@ -36,7 +36,7 @@ const App = () => {
           style= {styles.img1} >
         </Image> */}
         <ImageBackground source={require('./images/Get_started.png')} style={{width: '100%', height: '100%'}}>
-        <Intro button_name="abcsd"></Intro>
+        <Intro button_name="Get Started ➔"></Intro>
         </ImageBackground>
     </View>
   )
