@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
   button:{
     display: "flex", justifyContent: "center", alignContent: "center",
     backgroundColor: "#00ffff",
-    borderRadius: "50px"
+    borderRadius: 100
   },
   text:{
-    fontWeight: "bold", color: "#ffff00",
+    fontWeight: "bold", color: "#ffff00", fontSize: 40
   }
 });
