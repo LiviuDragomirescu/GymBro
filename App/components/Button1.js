@@ -1,11 +1,6 @@
-import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
@@ -19,19 +14,24 @@ export default Button1 = ({button_name}) => {
     </View>
     )
 }
+
 const styles = StyleSheet.create({
   button:{
     width: 283,
     height: 66,
     left: 56,
     top: 714,
-    display: "flex", justifyContent: "center", alignContent: "center",
+    display: "flex", 
+    justifyContent: "center", 
+    alignContent: "center",
     backgroundColor: "#ffff00",
     borderRadius: 100
   },
   text:{
     left: 23,
     alignContent: "center",
-    fontWeight: "bold", color: "#000000", fontSize: 40
+    fontWeight: "bold", 
+    color: "#000000", 
+    fontSize: 40
   }
 });

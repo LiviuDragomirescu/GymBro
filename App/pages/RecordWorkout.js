@@ -1,21 +1,14 @@
 import React from 'react';
 import {
-  Image,
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
   View,
 } from 'react-native';
 
-const Record_Workout = () => {
+const image = require('.././images/Record_Workout.png') ;
+
+const Record_Workout = ({navigation}) => {
     return (
       <View>
-          <ImageBackground source={require('./images/Record_Workout.png')} style={{width: '100%', height: '100%'}}>
-          <Intro> </Intro>
-          </ImageBackground>
+        <Intro navigation={navigation} img={image} button_name="Record Workout"></Intro>
       </View>
     )
   }

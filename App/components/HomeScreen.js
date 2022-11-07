@@ -1,20 +1,12 @@
-import { Button } from "react-native";
-import { View } from "react-native";
-import { ImageBackground } from "react-native";
+import { ImageBackground, StyleSheet, Text, View, Button, TouchableHighlight } from 'react-native';
 import Intro from '.././pages/Intro'
+
+const image = require('.././images/Get_started.png') ;
 
 export default HomeScreen = ({ navigation }) => {
     return (
         <View>
-            <Button
-            title="Go to Jane's profile"
-            onPress={() =>
-            navigation.navigate('Profile', { name: 'Jane' })
-                }
-            />
-            <ImageBackground source={require('.././images/Get_started.png')} style={{width: '100%', height: '100%'}}>
-            <Intro button_name="abcsd"></Intro>
-            </ImageBackground>
+            <Intro navigation={navigation} img={image} button_name="Get Started"></Intro>
         </View>
       
     );
