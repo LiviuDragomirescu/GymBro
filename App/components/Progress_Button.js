@@ -15,7 +15,7 @@ export default Test_Button = ({navigation, button_name, Go_To}) => {
         <TouchableOpacity
             style={styles.button24}
             onPress={() =>
-                navigation.navigate("Progress_History")
+                navigation.navigate("Weight_History")
                     }
         >
         <Text style={styles.test2}>➔</Text>
