@@ -6,7 +6,7 @@ export default Test_Button = ({navigation, button_name, Go_To}) => {
         <TouchableOpacity
             style={styles.button22}
             onPress={() =>
-                navigation.navigate('Profile', { name: 'Jane' })
+                navigation.navigate('Choose_Workout')
                     }
         >
         <Text style={styles.testwst}>{button_name}</Text>
