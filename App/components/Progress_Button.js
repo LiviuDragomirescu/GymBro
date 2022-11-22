@@ -18,7 +18,7 @@ export default Test_Button = ({navigation, button_name, Go_To}) => {
                 navigation.navigate("Weight_History")
                     }
         >
-        <Text style={styles.test2}>➔</Text>
+        <Text style={styles.test2}>➜</Text>
         </TouchableOpacity>
         </View>
     )
@@ -67,10 +67,10 @@ const styles = StyleSheet.create({
         fontSize: 30
     },
     test2: {
-      // left: 18,
+      left: 14,
       alignContent: "center",
       fontWeight: "bold", 
       color: "#000000", 
-      fontSize: 60
+      fontSize: 40
   }
   });
