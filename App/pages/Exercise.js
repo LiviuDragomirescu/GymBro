@@ -1,13 +1,44 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 
 const logofinal_image = require('.././images/logofinal.png') ;
+const logobun_image = require('.././images/logobun.png') ;
 
-const Choose_Workout = ({navigation, route}) => {
+const Exercise = ({navigation, route}) => {
+  const [number1, onChangeNumber1] = React.useState(null);
+  const [number2, onChangeNumber2] = React.useState(null);
+  const [number3, onChangeNumber3] = React.useState(null);
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
             {route.params.name} Exercise
         </Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeNumber1}
+          value={number1}
+          placeholder="Exercise Name"
+        />
+        <View style={styles.view_style}>
+          <TextInput
+            style={styles.input2}
+            onChangeText={onChangeNumber2}
+            value={number2}
+            placeholder="Sets"
+            keyboardType="numeric"
+          />
+          <Image
+            source = {logobun_image}
+            style={styles.pic2}
+            />
+          <TextInput
+            style={styles.input3}
+            onChangeText={onChangeNumber3}
+            value={number3}
+            placeholder="Reps"
+            keyboardType="numeric"
+          />
+        </View>
         <TouchableOpacity
             style={styles.button22}
             onPress={() =>
@@ -39,25 +70,65 @@ const Choose_Workout = ({navigation, route}) => {
         justifyContent: "center"
     },
     pic:{
-        top:400,
+        // top:10,
         left:120,
         width: 150,
         height: 150,
     },
     button22:{
-        top: 350,
+        // top: 10,
         justifyContent: "center", 
         backgroundColor: "#ffff00",
         borderRadius: 10,
         height: 60,
       },
-      testwst: {
+    testwst: {
         justifyContent: "center",
         left:140,
         fontWeight: "bold", 
         color: "#000000", 
         fontSize: 30
     },
+    input: {
+      height: 40,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+      color:"#000000",
+      borderColor:"#ffffff",
+      backgroundColor:"#ffffff"
+    },
+    input2: {
+      height: 100,
+      width:100,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+      color:"#000000",
+      borderColor:"#ffffff",
+      backgroundColor:"#ffffff"
+    },
+    input3: {
+      height: 100,
+      width:100,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+      color:"#000000",
+      borderColor:"#ffffff",
+      backgroundColor:"#ffffff"
+    },
+    view_style: {
+      flex: 1,
+      flexDirection:'row',
+      backgroundColor:'black',
+      paddingHorizontal: 10
+    },
+    pic2:{
+      margin: 12,
+      width: 100,
+      height: 100,
+  },
   });
 
-  export default Choose_Workout;
+  export default Exercise;
