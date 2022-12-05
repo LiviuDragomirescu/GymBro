@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, TextInput} from 'react-native';
+import { ImageBackground, Image, StyleSheet, View, Text, TextInput} from 'react-native';
 
 
 export default login_template_Button = ({navigation, img, Button_type, Button_name}) => {
@@ -8,6 +8,7 @@ export default login_template_Button = ({navigation, img, Button_type, Button_na
     return (
     <View>
       <ImageBackground source={img} style={styles.image}>
+      <Image source={require('.././images/logofinal.png') } style={styles.logo1}/>
       <TextInput
           style={styles.input}
           onChangeText={onChangeNumber1}
@@ -22,6 +23,10 @@ export default login_template_Button = ({navigation, img, Button_type, Button_na
         />
         <Button_type button_name={Button_name} navigation={navigation}>
         </Button_type>
+        <Text style={{ color: 'white', top: -170, left: 140} }> Forgot Password? </Text>
+        <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
+        <Image source={require('.././images/google.png') } style={styles.logo3}/>
+        <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text>
       </ImageBackground>
     </View>
     )
@@ -34,6 +39,27 @@ const styles = StyleSheet.create({
       width: '100%',
       height: '100%'
     },
+    logo1: {
+      top: 100,
+      left: 150,
+      justifyContent: 'center',
+      width: 100,
+      height: 100
+    },
+    logo2: {
+      top: -120,
+      left: 160,
+      justifyContent: 'center',
+      width: 30,
+      height: 30
+    },
+    logo3: {
+      top: -152,
+      left: 200,
+      justifyContent: 'center',
+      width: 37,
+      height: 37
+    },
   text: {
     height: 40,
     margin: 12,
@@ -41,6 +67,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   input: {
+    top: 200,
     height: 40,
     margin: 12,
     borderWidth: 1,
