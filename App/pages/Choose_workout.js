@@ -32,9 +32,10 @@ const Choose_Workout = ({navigation}) => {
     container: {
       flex: 1,
       backgroundColor:'black',
-      paddingHorizontal: 10
+      paddingHorizontal: 5
     },
     text:{
+        left: 40,
         fontSize:30,
         color:"white",
         justifyContent: "center",

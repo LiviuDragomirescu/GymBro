@@ -10,6 +10,7 @@ import WeightHistory from '../pages/WeightHistory';
 import Choose_Workout from '../pages/Choose_workout';
 import Exercise from '../pages/Exercise';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default MyStack = () => {
         <Stack.Screen name="Exercise" component={Exercise} options={{headerShown: false}}/>
         <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
+        <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

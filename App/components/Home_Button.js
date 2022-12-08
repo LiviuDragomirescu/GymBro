@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
     button22:{
         width: 250,
         height: 66,
-        left: 72,
+        left: 66,
         top: 260,
         justifyContent: "center", 
         alignContent: "center",
         backgroundColor: "#ffff00",
-        borderRadius: 100
+        borderRadius: 10
       },
     testwst: {
         left: 23,

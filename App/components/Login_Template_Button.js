@@ -16,6 +16,7 @@ export default login_template_Button = ({navigation, img, Button_type, Button_na
           placeholder="Phone/Email"
         />
       <TextInput
+          secureTextEntry={true}
           style={styles.input}
           onChangeText={onChangeNumber2}
           value={number2}
@@ -23,7 +24,7 @@ export default login_template_Button = ({navigation, img, Button_type, Button_na
         />
         <Button_type button_name={Button_name} navigation={navigation}>
         </Button_type>
-        <Text style={{ color: 'white', top: -170, left: 140} }> Forgot Password? </Text>
+        <Text style={{ color: 'white', top: -10, left: 140} }> Forgot Password? </Text>
         <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
         <Image source={require('.././images/google.png') } style={styles.logo3}/>
         <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text>
@@ -47,14 +48,14 @@ const styles = StyleSheet.create({
       height: 100
     },
     logo2: {
-      top: -120,
+      top: -90,
       left: 160,
       justifyContent: 'center',
       width: 30,
       height: 30
     },
     logo3: {
-      top: -152,
+      top: -122,
       left: 200,
       justifyContent: 'center',
       width: 37,

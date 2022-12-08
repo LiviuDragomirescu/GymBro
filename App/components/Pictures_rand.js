@@ -32,16 +32,22 @@ const Pictures_rand = ({navigation, imageleft, imageright, leftname, rightname})
         flex: 1,
         flexDirection:'row',
         backgroundColor:'black',
+        paddingTop: 20,
       },
     pic_left: {
-        left:15,
-        width: 120,
-        height: 120,
+        left:25,
+        width: 150,
+        height: 110,
+        borderWidth: 1,
+        borderColor: 'yellow',
+        
       },  
     pic_right: {
-        left:115,
-        width: 120,
-        height: 120,
+        left:60,
+        width: 150,
+        height: 110,
+        borderWidth: 1,
+        borderColor: 'yellow',
       },  
   });
 

@@ -6,7 +6,7 @@ export default Login_Button = ({navigation, button_name, Go_To}) => {
         <TouchableOpacity
             style={styles.loginButton}
             onPress={() =>
-                navigation.navigate('Choose_Workout')
+                navigation.navigate('Register')
                     }
         >
         <Text style={styles.testwst}>{button_name}</Text>
@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
       padding: 10
     },
     loginButton:{
-        width: 372,
+        width: 386,
         height: 40,
         left: 0,
-        top: 10,
+        top: 60,
         justifyContent: "center", 
         alignContent: "center",
         backgroundColor: "#ffff00",
