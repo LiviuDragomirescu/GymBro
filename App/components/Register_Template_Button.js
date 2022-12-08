@@ -50,7 +50,7 @@ export default register_template_Button = ({navigation, img, Button_type, button
         <TouchableOpacity
             style={styles.registerButton}
             onPress={() =>
-                navigation.navigate('Register')
+                navigation.navigate('Choose_Workout')
                     }
         >
         <Text style={styles.testwst}>{button_name}</Text>

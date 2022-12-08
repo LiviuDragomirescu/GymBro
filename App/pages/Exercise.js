@@ -8,16 +8,25 @@ const Exercise = ({navigation, route}) => {
   const [number1, onChangeNumber1] = React.useState(null);
   const [number2, onChangeNumber2] = React.useState(null);
   const [number3, onChangeNumber3] = React.useState(null);
+  const [number4, onChangeNumber4] = React.useState(null);
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>
-            {route.params.name} Exercise
+        <Text style={styles.text1}>
+            {route.params.name}  <Text style={styles.text2}>Exercise
+        </Text>
         </Text>
         <TextInput
           style={styles.input}
           onChangeText={onChangeNumber1}
           value={number1}
           placeholder="Exercise Name"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeNumber4}
+          value={number4}
+          placeholder="Weight"
+          keyboardType="numeric"
         />
         <View style={styles.view_style}>
           <TextInput
@@ -62,13 +71,20 @@ const Exercise = ({navigation, route}) => {
       backgroundColor:'black',
       paddingHorizontal: 10
     },
-    text:{
+    text1:{
         fontSize:30,
-        color:"white",
-        left:40,
+        color:"yellow",
+        left:90,
         right:20,
         justifyContent: "center"
     },
+    text2:{
+      fontSize:30,
+      color:"white",
+      left:40,
+      right:20,
+      justifyContent: "center"
+  },
     pic:{
         // top:10,
         left:120,
@@ -76,11 +92,13 @@ const Exercise = ({navigation, route}) => {
         height: 150,
     },
     button22:{
-        // top: 10,
+        left: 15,
+        top: -150,
         justifyContent: "center", 
         backgroundColor: "#ffff00",
         borderRadius: 10,
         height: 60,
+        width: 360
       },
     testwst: {
         justifyContent: "center",
@@ -90,6 +108,7 @@ const Exercise = ({navigation, route}) => {
         fontSize: 30
     },
     input: {
+      left: 10,
       height: 40,
       margin: 12,
       borderWidth: 1,
