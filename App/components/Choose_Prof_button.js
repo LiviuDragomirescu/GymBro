@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
-import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import React from 'react';
+import { ImageBackground, StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
 
-const initialState = {
-  react: false,
-  next: false,
-  vue: false,
-  angular: false,
-};
-
-export default register_template_Button = ({navigation, img, Button_type, button_name}) => {
+export default Choose_prof_button = ({navigation, img, button_name}) => {
   const [number0, onChangeNumber0] = React.useState(null);
   const [number1, onChangeNumber1] = React.useState(null);
-  const [number2, onChangeNumber2] = React.useState(null);
-  const [number3, onChangeNumber3] = React.useState(null);
   
     return (
     <View>
@@ -32,21 +23,8 @@ export default register_template_Button = ({navigation, img, Button_type, button
           value={number1}
           placeholder="Phone"
         />
-      <TextInput
-          style={styles.input}
-          onChangeText={onChangeNumber2}
-          value={number2}
-          placeholder="Full Name"
-        />
-        <TextInput
-          secureTextEntry={true}
-          style={styles.input}
-          onChangeText={onChangeNumber3}
-          value={number3}
-          placeholder="Password"
-        />
         
-        <Text style={{ color: 'white', top: 120, fontSize: 12} }>    By continuing you accept our Privacy Policy</Text>
+        {/* <Text style={{ color: 'white', top: 120, fontSize: 12} }>    By continuing you accept our Privacy Policy</Text> */}
         <TouchableOpacity
             style={styles.registerButton}
             onPress={() =>
@@ -104,7 +82,7 @@ innerText: {
     backgroundColor: "#ffff00",
   },
   testwst: {
-    left: 140,
+    left: 110,
     alignContent: "center",
     fontWeight: "bold", 
     color: "#000000", 

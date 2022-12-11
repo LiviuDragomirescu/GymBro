@@ -12,6 +12,7 @@ import Choose_Workout from '../pages/Choose_workout';
 import Exercise from '../pages/Exercise';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import Choose_Profile from '../pages/Choose_profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ export default MyStack = () => {
         <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
         <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
+        <Stack.Screen name="Choose_Profile" component={Choose_Profile} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
