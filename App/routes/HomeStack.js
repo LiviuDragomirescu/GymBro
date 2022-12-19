@@ -16,8 +16,6 @@ import Choose_Profile from '../pages/Choose_profile';
 
 const Stack = createNativeStackNavigator();
 
-// aici definesc screenurile si dupa ma mut in aplicatie doar dupa name
-
 export default MyStack = () => {
   return (
     <NavigationContainer>

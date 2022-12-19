@@ -4,12 +4,12 @@ export default Home_Button = ({navigation, button_name}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
-            style={styles.button22}
+            style={styles.button}
             onPress={() =>
                 navigation.navigate('Record_Workout')
                     }
         >
-        <Text style={styles.testwst}>{button_name}</Text>
+        <Text style={styles.text}>{button_name}</Text>
         </TouchableOpacity>
         </View>
     )
@@ -21,16 +21,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       paddingHorizontal: 10
     },
-    button: {
-      alignItems: "center",
-      backgroundColor: "#DDDDDD",
-      padding: 10
-    },
-    countContainer: {
-      alignItems: "center",
-      padding: 10
-    },
-    button22:{
+    button:{
         width: 250,
         height: 66,
         left: 66,
@@ -40,7 +31,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffff00",
         borderRadius: 10
       },
-    testwst: {
+    text: {
         left: 23,
         alignContent: "center",
         fontWeight: "bold", 

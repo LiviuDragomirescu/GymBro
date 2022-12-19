@@ -11,7 +11,7 @@ const Exercise = ({navigation, route}) => {
   const [number4, onChangeNumber4] = React.useState(null);
     return (
       <View style={styles.container}>
-        <Text style={styles.text1}>
+        <Text style={styles.title_text}>
             {route.params.name}  <Text style={styles.text2}>Exercise
         </Text>
         </Text>
@@ -30,7 +30,7 @@ const Exercise = ({navigation, route}) => {
         />
         <View style={styles.view_style}>
           <TextInput
-            style={styles.input2}
+            style={styles.sets_input}
             onChangeText={onChangeNumber2}
             value={number2}
             placeholder="Sets"
@@ -38,10 +38,10 @@ const Exercise = ({navigation, route}) => {
           />
           <Image
             source = {logobun_image}
-            style={styles.pic2}
+            style={styles.small_logo}
             />
           <TextInput
-            style={styles.input3}
+            style={styles.reps_input}
             onChangeText={onChangeNumber3}
             value={number3}
             placeholder="Reps"
@@ -59,7 +59,7 @@ const Exercise = ({navigation, route}) => {
 
         <Image
             source = {logofinal_image}
-            style={styles.pic}
+            style={styles.big_loggo}
             />
       </View>
     )
@@ -71,7 +71,7 @@ const Exercise = ({navigation, route}) => {
       backgroundColor:'black',
       paddingHorizontal: 10
     },
-    text1:{
+    title_text:{
         fontSize:30,
         color:"yellow",
         left:90,
@@ -85,8 +85,7 @@ const Exercise = ({navigation, route}) => {
       right:20,
       justifyContent: "center"
   },
-    pic:{
-        // top:10,
+    big_loggo:{
         left:120,
         width: 150,
         height: 150,
@@ -117,7 +116,7 @@ const Exercise = ({navigation, route}) => {
       borderColor:"#ffffff",
       backgroundColor:"#ffffff"
     },
-    input2: {
+    sets_input: {
       height: 100,
       width:100,
       margin: 12,
@@ -127,7 +126,7 @@ const Exercise = ({navigation, route}) => {
       borderColor:"#ffffff",
       backgroundColor:"#ffffff"
     },
-    input3: {
+    reps_input: {
       height: 100,
       width:100,
       margin: 12,
@@ -143,7 +142,7 @@ const Exercise = ({navigation, route}) => {
       backgroundColor:'black',
       paddingHorizontal: 10
     },
-    pic2:{
+    small_logo:{
       margin: 12,
       width: 100,
       height: 100,

@@ -2,7 +2,7 @@ import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const Pictures_rand = ({navigation, imageleft, imageright, leftname, rightname}) => {
     return (
-        <View style={styles.container22}>
+        <View style={styles.container}>
         <TouchableOpacity
             onPress={() =>
                 navigation.navigate('Exercise', { name: leftname })
@@ -28,7 +28,7 @@ const Pictures_rand = ({navigation, imageleft, imageright, leftname, rightname})
   }
 
   const styles = StyleSheet.create({
-    container22: {
+    container: {
         flex: 1,
         flexDirection:'row',
         backgroundColor:'black',

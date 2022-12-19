@@ -1,7 +1,6 @@
 import { View } from 'react-native';
 
 import Choose_Prof_button from '../components/Choose_Prof_button';
-import Login_Button from '../components/Login_Button';
 
 const image = require('.././images/background.png') ;
 

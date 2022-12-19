@@ -1,24 +1,24 @@
 import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
 
-export default Test_Button = ({navigation, button_name, Go_To}) => {
+export default Test_Button = ({navigation, button_name}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
-            style={styles.button22}
+            style={styles.choose_button}
             onPress={() =>
                 navigation.navigate('Choose_Workout')
                     }
         >
-        <Text style={styles.testwst}>{button_name}</Text>
+        <Text style={styles.text_button}>{button_name}</Text>
         </TouchableOpacity>
         
         <TouchableOpacity
-            style={styles.button24}
+            style={styles.arrow_button}
             onPress={() =>
                 navigation.navigate("Progress_History")
                     }
         >
-        <Text style={styles.test2}>➜</Text>
+        <Text style={styles.arrow_text}>➜</Text>
         </TouchableOpacity>
         </View>
     )
@@ -30,16 +30,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       paddingHorizontal: 10
     },
-    button: {
-      alignItems: "center",
-      backgroundColor: "#DDDDDD",
-      padding: 10
-    },
-    countContainer: {
-      alignItems: "center",
-      padding: 10
-    },
-    button22:{
+    choose_button:{
         width: 250,
         height: 66,
         left: 66,
@@ -49,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffff00",
         borderRadius: 100
       },
-      button24:{
+      arrow_button:{
         width: 70,
         height: 70,
         left: 160,
@@ -59,14 +50,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffff00",
         borderRadius: 100
       },
-    testwst: {
+    text_button: {
         left: 18,
         alignContent: "center",
         fontWeight: "bold", 
         color: "#000000", 
         fontSize: 30
     },
-    test2: {
+    arrow_text: {
       left: 14,
       alignContent: "center",
       fontWeight: "bold", 
