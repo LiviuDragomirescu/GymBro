@@ -67,12 +67,7 @@ const styles = StyleSheet.create({
       width: '100%',
       height: '100%'
     },
-  text: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
+
   input: {
     top: 80,
     height: 50,
@@ -94,6 +89,7 @@ const styles = StyleSheet.create({
 innerText: {
     color: 'yellow'
   },
+
   registerButton:{
     width: 380,
     height: 40,
@@ -103,6 +99,7 @@ innerText: {
     alignContent: "center",
     backgroundColor: "#ffff00",
   },
+  
   testwst: {
     left: 140,
     alignContent: "center",
