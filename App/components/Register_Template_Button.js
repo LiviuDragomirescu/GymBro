@@ -31,6 +31,7 @@ export default register_template_Button = ({navigation, img, Button_type, button
           onChangeText={onChangeNumber1}
           value={number1}
           placeholder="Phone"
+          keyboardType="numeric"
         />
       <TextInput
           style={styles.input}
@@ -94,7 +95,7 @@ innerText: {
     width: 380,
     height: 40,
     left: 10,
-    top: 270,
+    top: 230,
     justifyContent: "center", 
     alignContent: "center",
     backgroundColor: "#ffff00",

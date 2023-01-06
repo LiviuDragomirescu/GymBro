@@ -1,13 +1,14 @@
 import React from 'react';
-import { ImageBackground, Image, StyleSheet, View, Text, TextInput} from 'react-native';
+import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import Account_Button from './Account_Button';
 
 
-export default login_template_Button = ({navigation, img, Button_type, Button_name}) => {
+export default login_template_Button = ({navigation, Button_type, Button_name}) => {
   const [number1, onChangeNumber1] = React.useState(null);
   const [number2, onChangeNumber2] = React.useState(null);
     return (
-    <View>
-      <ImageBackground source={img} style={styles.image}>
+    <View style={{backgroundColor:'black'}}>
+      <ImageBackground style={styles.image}>
       <Image source={require('.././images/logofinal.png') } style={styles.logo1}/>
       <TextInput
           style={styles.input}
@@ -24,10 +25,12 @@ export default login_template_Button = ({navigation, img, Button_type, Button_na
         />
         <Button_type button_name={Button_name} navigation={navigation}>
         </Button_type>
-        <Text style={{ color: 'white', top: -10, left: 140} }> Forgot Password? </Text>
+        <Text style={{ color: 'white', top: -20, left: 140} }> Forgot Password? </Text>
         <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
         <Image source={require('.././images/google.png') } style={styles.logo3}/>
-        <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text>
+        {/* <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text> */}
+        <Account_Button button_name={'Don`t have an account?'} navigation={navigation}>
+        </Account_Button>
       </ImageBackground>
     </View>
     )
@@ -48,14 +51,14 @@ const styles = StyleSheet.create({
       height: 100
     },
     logo2: {
-      top: -90,
+      top: 0,
       left: 160,
       justifyContent: 'center',
       width: 30,
       height: 30
     },
     logo3: {
-      top: -122,
+      top: -32,
       left: 200,
       justifyContent: 'center',
       width: 37,
@@ -76,5 +79,16 @@ const styles = StyleSheet.create({
     color:"#000000",
     borderColor:"#ffffff",
     backgroundColor:"#ffffff"
+  },
+  arrow_button:{
+    width: 140,
+    height: 50,
+    left: 30,
+    top: -10,
+    justifyContent: "center", 
+    alignContent: "center",
+    backgroundColor: "#00000000",
+    color: "#00000000",
+    borderRadius: 10
   },
 });

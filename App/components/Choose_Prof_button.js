@@ -11,24 +11,33 @@ export default Choose_prof_button = ({navigation, img, button_name}) => {
       <Text style={styles.baseText}>Gym
         <Text style={styles.innerText}>Bro </Text>
       </Text>
+      <Text style={styles.genderStyle}> Choose your gender </Text>
       <TextInput
           style={styles.input}
           onChangeText={onChangeNumber0}
           value={number0}
-          placeholder="Email"
+          placeholder="Gender"
         />
       <TextInput
           style={styles.input}
           onChangeText={onChangeNumber1}
           value={number1}
-          placeholder="Phone"
+          placeholder="Weight"
+          keyboardType="numeric"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeNumber1}
+          value={number1}
+          placeholder="Height"
+          keyboardType="numeric"
         />
         
         {/* <Text style={{ color: 'white', top: 120, fontSize: 12} }>    By continuing you accept our Privacy Policy</Text> */}
         <TouchableOpacity
             style={styles.registerButton}
             onPress={() =>
-                navigation.navigate('Choose_Profile')
+                navigation.navigate('Login')
                     }
         >
         <Text style={styles.testwst}>{button_name}</Text>
@@ -51,9 +60,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
+  genderStyle: {
+    top: 60,
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize:18,
+    textAlign: 'center'
+  },
   input: {
     top: 80,
-    height: 50,
+    height: 70,
     margin: 12,
     borderWidth: 1,
     padding: 10,
@@ -76,7 +92,7 @@ innerText: {
     width: 380,
     height: 40,
     left: 10,
-    top: 270,
+    top: 200,
     justifyContent: "center", 
     alignContent: "center",
     backgroundColor: "#ffff00",
