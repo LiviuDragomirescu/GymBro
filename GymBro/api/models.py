@@ -10,3 +10,15 @@ class Room(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     
+class User(models.Model):
+    email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.email
+
+class Exercise(models.Model):
+    exercise_name = models.CharField(max_length=50, default='', unique=True)
+    weight = models.IntegerField(null=False, default=1)
+    sets = models.IntegerField(null=False, default=1)
+    reps = models.IntegerField(null=False, default=1)

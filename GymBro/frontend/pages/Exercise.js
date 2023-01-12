@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 
+import ProfileScreen from './ProfileScreen';
+
 const logofinal_image = require('.././images/logofinal.png') ;
 const logobun_image = require('.././images/logobun.png') ;
 
@@ -9,6 +11,25 @@ const Exercise = ({navigation, route}) => {
   const [number2, onChangeNumber2] = React.useState(null);
   const [number3, onChangeNumber3] = React.useState(null);
   const [number4, onChangeNumber4] = React.useState(null);
+
+  const InsertExercise = () => {
+      fetch('http://192.168.0.101:80/api/exercise/',{
+        method:"POST",
+        headers: {
+          'Content-Type':'application/json'
+        },
+
+        body: JSON.stringify({exercise_name:number1, weight:number4, sets:number3, reps:number2})
+      })
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data)
+      })
+      .then(navigation.navigate('Record_Workout'))
+      .catch(error => console.log("Error"))
+  }
+
+
     return (
       <View style={styles.container}>
         <Text style={styles.title_text}>
@@ -50,9 +71,14 @@ const Exercise = ({navigation, route}) => {
         </View>
         <TouchableOpacity
             style={styles.button22}
-            onPress={() =>
-                navigation.navigate('Record_Workout')
-                    }
+            // onPress={() =>
+            //     navigation.navigate('Record_Workout')
+            //         }
+            onPress={() => InsertExercise()}
+            // onPress={() =>
+            //     navigation.navigate('Profile')
+                
+            //         }
         >
         <Text style={styles.testwst}>Submit</Text>
         </TouchableOpacity>
