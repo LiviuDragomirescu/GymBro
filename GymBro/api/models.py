@@ -11,7 +11,7 @@ class Room(models.Model):
 
     
 class User(models.Model):
-    email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+    email = models.EmailField(verbose_name='email address', max_length=255)
     password = models.CharField(max_length=50)
 
     def __str__(self):

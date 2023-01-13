@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Alert } from 'react-native';
 
 import ProfileScreen from './ProfileScreen';
 
@@ -21,12 +21,16 @@ const Exercise = ({navigation, route}) => {
 
         body: JSON.stringify({exercise_name:number1, weight:number4, sets:number3, reps:number2})
       })
-      .then(resp => resp.json())
-      .then(data => {
-        console.log(data)
-      })
-      .then(navigation.navigate('Record_Workout'))
-      .catch(error => console.log("Error"))
+      .then(resp => {
+      if (resp.ok)
+      {
+          navigation.navigate('Record_Workout')
+      }
+      else
+      {
+          Alert.alert("Incorect exercise template")
+      }
+    })
   }
 
 
