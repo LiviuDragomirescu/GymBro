@@ -13,6 +13,23 @@ export default register_template_Button = ({navigation, img, Button_type, button
   const [number1, onChangeNumber1] = React.useState(null);
   const [number2, onChangeNumber2] = React.useState(null);
   const [number3, onChangeNumber3] = React.useState(null);
+
+  const InsertUser = () => {
+    fetch('http://192.168.0.101:80/api/users/',{
+      method:"POST",
+      headers: {
+        'Content-Type':'application/json'
+      },
+
+      body: JSON.stringify({email:number0, password:number3})
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data)
+    })
+    .then(navigation.navigate('Login'))
+    .catch(error => console.log("Error"))
+}
   
     return (
     <View>
@@ -50,9 +67,10 @@ export default register_template_Button = ({navigation, img, Button_type, button
         <Text style={{ color: 'white', top: 120, fontSize: 12} }>    By continuing you accept our Privacy Policy</Text>
         <TouchableOpacity
             style={styles.registerButton}
-            onPress={() =>
-                navigation.navigate('Choose_Profile')
-                    }
+            // onPress={() =>
+            //     navigation.navigate('Choose_Profile')
+            //         }
+            onPress={() =>InsertUser()}
         >
         <Text style={styles.testwst}>{button_name}</Text>
         </TouchableOpacity>
