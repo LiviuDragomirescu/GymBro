@@ -59,7 +59,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
         </TouchableOpacity>
         
         </View>
-        <Text style={{ color: 'white', top: -20, left: 140} }> Forgot Password? </Text>
+        <Text style={{ color: 'white', top: -30, left: 140} }> Forgot Password? </Text>
         <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
         <Image source={require('.././images/google.png') } style={styles.logo3}/>
         {/* <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text> */}
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   input: {
-    top: 200,
+    top: 180,
     height: 40,
     margin: 12,
     borderWidth: 1,
