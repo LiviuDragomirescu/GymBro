@@ -24,14 +24,13 @@ const styles = StyleSheet.create({
         top: -30,
         justifyContent: "center", 
         alignContent: "center",
-        backgroundColor: "#00ff00",
+        backgroundColor: "#000000",
         borderRadius: 10,
       },
       
     testwst: {
         alignContent: "center",
-        fontWeight: "bold", 
-        color: "#000000", 
+        color: "#ffffff", 
         fontSize: 14,
     },
   });
