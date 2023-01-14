@@ -3,13 +3,11 @@ import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpa
 import Account_Button from './Account_Button';
 
 
-
 export default login_template_Button = ({navigation, Button_type, Button_name}) => {
   const [number1, onChangeNumber1] = React.useState(null);
   const [number2, onChangeNumber2] = React.useState(null);
     return (
     <View style={{backgroundColor:'black'}}>
-      
       <ImageBackground style={styles.image}>
       <Image source={require('.././images/logofinal.png') } style={styles.logo1}/>
       <TextInput
@@ -27,7 +25,7 @@ export default login_template_Button = ({navigation, Button_type, Button_name}) 
         />
         <Button_type button_name={Button_name} navigation={navigation}>
         </Button_type>
-        <Text style={{ color: 'white', top: -25, left: 140} }> Forgot Password? </Text>
+        <Text style={{ color: 'white', top: -20, left: 140} }> Forgot Password? </Text>
         <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
         <Image source={require('.././images/google.png') } style={styles.logo3}/>
         {/* <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text> */}
@@ -46,7 +44,7 @@ const styles = StyleSheet.create({
       height: '100%'
     },
     logo1: {
-      top: 90,
+      top: 100,
       left: 150,
       justifyContent: 'center',
       width: 100,
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
       height: 30
     },
     logo3: {
-      top: -32,
+      top:-32,
       left: 200,
       justifyContent: 'center',
       width: 37,
@@ -73,7 +71,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   input: {
-    top: 180,
+    top: 200,
     height: 40,
     margin: 12,
     borderWidth: 1,
