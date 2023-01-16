@@ -31,14 +31,17 @@ const styles = StyleSheet.create({
       paddingHorizontal: 10
     },
     weight_button:{
-        width: 250,
+        width: 266,
         height: 66,
         left: 66,
         top: 100,
         justifyContent: "center", 
         alignContent: "center",
-        backgroundColor: "#ffff00",
-        borderRadius: 100
+        borderRadius: 100,
+        backgroundColor: 'rgba(52, 52, 0, 0)',
+        borderRadius: 100,
+        borderWidth: 4,
+        borderColor: '#ffff00'
       },
       arrow_button:{
         width: 70,
@@ -47,21 +50,23 @@ const styles = StyleSheet.create({
         top: 200,
         justifyContent: "center", 
         alignContent: "center",
-        backgroundColor: "#ffff00",
-        borderRadius: 100
+        backgroundColor: 'rgba(52, 52, 0, 0)',
+        borderRadius: 100,
+        borderWidth: 4,
+        borderColor: '#ffff00'
       },
     text_button: {
         left: 18,
         alignContent: "center",
         fontWeight: "bold", 
-        color: "#000000", 
+        color: "#ffff00", 
         fontSize: 30
     },
     arrow_text: {
-      left: 14,
-      alignContent: "center",
-      fontWeight: "bold", 
-      color: "#000000", 
-      fontSize: 40
+        top: -1,
+        left: 15,
+        alignContent: "center",
+        color: "#ffff00", 
+        fontSize: 34
   }
   });
