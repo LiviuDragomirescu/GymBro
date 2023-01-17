@@ -1,8 +1,6 @@
 import React from 'react';
-import { useState , useEffect} from "react";
-import { Text , FlatList, Alert, View, StyleSheet, StatusBar, SafeAreaView, TouchableOpacity} from "react-native";
+import { Text , Alert, View, StyleSheet} from "react-native";
 import {Button} from 'react-native-paper'
-import {Card} from 'react-native-paper'
 
 function ExerciseDetails(props) {
 

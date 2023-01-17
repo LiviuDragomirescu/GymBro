@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
-
-const initialState = {
-  react: false,
-  next: false,
-  vue: false,
-  angular: false,
-};
+import React from 'react';
+import { ImageBackground, StyleSheet, View, Text} from 'react-native';
 
 export default weight_template = ({img}) => {
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { View, StyleSheet, Image, TextInput, Alert } from 'react-native';
 import { Button } from 'react-native-paper';
 
-const logofinal_image = require('.././images/logofinal.png') ;
 const logobun_image = require('.././images/logobun.png') ;
 
 const ExerciseUpdate = (props) => {
@@ -79,41 +78,6 @@ const ExerciseUpdate = (props) => {
       flex: 1,
       backgroundColor:'black',
       paddingHorizontal: 10
-    },
-    title_text:{
-        fontSize:30,
-        color:"yellow",
-        left:90,
-        right:20,
-        justifyContent: "center"
-    },
-    text2:{
-      fontSize:30,
-      color:"white",
-      left:40,
-      right:20,
-      justifyContent: "center"
-  },
-    big_loggo:{
-        left:120,
-        width: 150,
-        height: 150,
-    },
-    button22:{
-        left: 15,
-        top: -150,
-        justifyContent: "center", 
-        backgroundColor: "#ffff00",
-        borderRadius: 10,
-        height: 60,
-        width: 360
-      },
-    testwst: {
-        justifyContent: "center",
-        left:140,
-        fontWeight: "bold", 
-        color: "#000000", 
-        fontSize: 30
     },
     input: {
       left: 10,

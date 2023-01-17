@@ -1,7 +1,6 @@
-import { useLinkProps } from '@react-navigation/native';
 import React from 'react';
 import { useState , useEffect} from "react";
-import { Text , FlatList, Alert, View, StyleSheet, StatusBar, SafeAreaView} from "react-native";
+import { Text , FlatList, Alert, StyleSheet, SafeAreaView} from "react-native";
 import {Card} from 'react-native-paper'
 
 function Print_Exercise({navigation}) {

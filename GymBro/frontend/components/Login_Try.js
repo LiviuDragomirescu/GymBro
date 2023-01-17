@@ -26,8 +26,6 @@ export default login_template_Button = ({navigation, Button_name}) => {
             Alert.alert("Username or password are incorrect!Try again.")
         }
     })
-    // .then(navigation.navigate('Record_Workout'))
-    // .catch()
     }
 
     return (
@@ -50,9 +48,6 @@ export default login_template_Button = ({navigation, Button_name}) => {
         <View style={styles.container}>
         <TouchableOpacity
             style={styles.loginButton}
-            // onPress={() =>
-            //     navigation.navigate('Register')
-            //         }
             onPress={() => LoginUser()}
         >
         <Text style={styles.testwst}>{Button_name}</Text>
@@ -62,7 +57,6 @@ export default login_template_Button = ({navigation, Button_name}) => {
         <Text style={{ color: 'white', top: -30, left: 140} }> Forgot Password? </Text>
         <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
         <Image source={require('.././images/google.png') } style={styles.logo3}/>
-        {/* <Text style={{ color: 'white', top: -30, left: 25} }> Don't Have an Account? </Text> */}
         <Account_Button button_name={'Don`t have an account?'} navigation={navigation}>
         </Account_Button>
       </ImageBackground>

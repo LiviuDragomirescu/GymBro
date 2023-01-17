@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Alert } from 'react-native';
 
-import ProfileScreen from './ProfileScreen';
-
 const logofinal_image = require('.././images/logofinal.png') ;
 const logobun_image = require('.././images/logobun.png') ;
 
@@ -75,14 +73,7 @@ const Exercise = ({navigation, route}) => {
         </View>
         <TouchableOpacity
             style={styles.button22}
-            // onPress={() =>
-            //     navigation.navigate('Record_Workout')
-            //         }
             onPress={() => InsertExercise()}
-            // onPress={() =>
-            //     navigation.navigate('Profile')
-                
-            //         }
         >
         <Text style={styles.testwst}>Submit</Text>
         </TouchableOpacity>
