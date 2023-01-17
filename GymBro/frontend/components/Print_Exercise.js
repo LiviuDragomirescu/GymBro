@@ -1,16 +1,10 @@
+import { useLinkProps } from '@react-navigation/native';
 import React from 'react';
 import { useState , useEffect} from "react";
 import { Text , FlatList, Alert, View, StyleSheet, StatusBar, SafeAreaView} from "react-native";
 import {Card} from 'react-native-paper'
 
-const mydata = [
-    {id:1, exercise_name:"pula1", weight:2, sets:4, reps:20},
-    {id:2, exercise_name:"asdad2", weight:13, sets:2, reps:11},
-]
-
-const onedata = {id:1, exercise_name:"pula1", weight:2, sets:4, reps:20}
-
-function Print_Exercise() {
+function Print_Exercise({navigation}) {
 
   const [data, setData] = useState(null)
 
@@ -26,9 +20,13 @@ function Print_Exercise() {
       .catch(error => Alert.alert("erorr", error))
     }, []);
 
+    const clickedItem = (data) => {
+      navigation.navigate("Details", {data:data})
+    }
+
     const renderData = (item) => {
       return (
-        <Card style = {styles.cardstyle}>
+        <Card style = {styles.cardstyle} onPress = {() => clickedItem(item)}>
           <Text style={{fontSize:25}}>{item.exercise_name}</Text>
         </Card>
       )

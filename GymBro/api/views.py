@@ -24,6 +24,21 @@ class UserList(generics.GenericAPIView, mixins.ListModelMixin, mixins.UpdateMode
     def post(self, request):
         return self.create(request)
 
+class UserDetail(generics.GenericAPIView, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+    queryset = User.objects.all()
+    serializer_class = UserSerializers
+
+    lookup_field = 'id'
+
+    def get(self, request, id):
+        return self.retrieve(request, id=id)
+    
+    def put(self, request, id):
+        return self.update(request, id=id)
+
+    def delete(self, request, id):
+        return self.destroy(request, id=id)
+
 class ExerciseList(generics.GenericAPIView, mixins.ListModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin):
     queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializers
