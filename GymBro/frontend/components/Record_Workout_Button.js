@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
 
-export default Test_Button = ({navigation, button_name}) => {
+export default Record_Workout_Button = ({navigation, button_name}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity

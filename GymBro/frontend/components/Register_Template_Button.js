@@ -27,7 +27,7 @@ export default register_template_Button = ({navigation, img, button_name}) => {
       }
   })
 }
-  
+
     return (
     <View>
       <ImageBackground source={img} style={styles.image}>
@@ -35,12 +35,14 @@ export default register_template_Button = ({navigation, img, button_name}) => {
         <Text style={styles.innerText}>Bro </Text>
       </Text>
       <TextInput
+          maxLength={50}
           style={styles.input}
           onChangeText={onChangeNumber0}
           value={number0}
           placeholder="Email"
         />
       <TextInput
+          maxLength={20}
           style={styles.input}
           onChangeText={onChangeNumber1}
           value={number1}
@@ -48,12 +50,14 @@ export default register_template_Button = ({navigation, img, button_name}) => {
           keyboardType="numeric"
         />
       <TextInput
+          maxLength={20}
           style={styles.input}
           onChangeText={onChangeNumber2}
           value={number2}
           placeholder="Full Name"
         />
         <TextInput
+          maxLength={20}
           secureTextEntry={true}
           style={styles.input}
           onChangeText={onChangeNumber3}

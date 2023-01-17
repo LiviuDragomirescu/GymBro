@@ -1,17 +1,21 @@
 from rest_framework import serializers
-from .models import Room, User, Exercise
-from django import forms
+from .models import Room, MyUser, Exercise
+
 
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
         fields = ('id', 'code', 'host', 'guest_can_pause', 'votes_to_skip', 'created_at')
 
-class UserSerializers(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = MyUser
         fields = ['id', 'email', 'password']
-        widgets = {'password' : forms.PasswordInput()}
+
+class UserLoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = ['email', 'password']
 
 class ExerciseSerializers(serializers.ModelSerializer):
     class Meta:

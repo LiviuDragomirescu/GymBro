@@ -39,12 +39,14 @@ const Exercise = ({navigation, route}) => {
         </Text>
         </Text>
         <TextInput
+          maxLength={20}
           style={styles.input}
           onChangeText={onChangeNumber1}
           value={number1}
           placeholder="Exercise Name"
         />
         <TextInput
+          maxLength={4}
           style={styles.input}
           onChangeText={onChangeNumber4}
           value={number4}
@@ -53,6 +55,7 @@ const Exercise = ({navigation, route}) => {
         />
         <View style={styles.view_style}>
           <TextInput
+            maxLength={4}
             style={styles.sets_input}
             onChangeText={onChangeNumber2}
             value={number2}
@@ -64,6 +67,7 @@ const Exercise = ({navigation, route}) => {
             style={styles.small_logo}
             />
           <TextInput
+            maxLength={4}
             style={styles.reps_input}
             onChangeText={onChangeNumber3}
             value={number3}
