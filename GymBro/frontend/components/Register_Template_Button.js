@@ -14,7 +14,7 @@ export default register_template_Button = ({navigation, img, button_name}) => {
         'Content-Type':'application/json'
       },
 
-      body: JSON.stringify({email:number0, password:number3})
+      body: JSON.stringify({email:number0, username:number2, password:number3})
     })
     .then(resp => {
       if (resp.ok)
@@ -35,14 +35,14 @@ export default register_template_Button = ({navigation, img, button_name}) => {
         <Text style={styles.innerText}>Bro </Text>
       </Text>
       <TextInput
-          maxLength={50}
+          maxLength={30}
           style={styles.input}
           onChangeText={onChangeNumber0}
           value={number0}
           placeholder="Email"
         />
       <TextInput
-          maxLength={20}
+          maxLength={15}
           style={styles.input}
           onChangeText={onChangeNumber1}
           value={number1}
@@ -50,14 +50,14 @@ export default register_template_Button = ({navigation, img, button_name}) => {
           keyboardType="numeric"
         />
       <TextInput
-          maxLength={20}
+          maxLength={15}
           style={styles.input}
           onChangeText={onChangeNumber2}
           value={number2}
-          placeholder="Full Name"
+          placeholder="Username"
         />
         <TextInput
-          maxLength={20}
+          maxLength={15}
           secureTextEntry={true}
           style={styles.input}
           onChangeText={onChangeNumber3}
@@ -69,6 +69,9 @@ export default register_template_Button = ({navigation, img, button_name}) => {
         <TouchableOpacity
             style={styles.registerButton}
             onPress={() =>InsertUser()}
+            // onPress={() =>
+            //   navigation.navigate("Choose_Profile")
+            //       }
         >
         <Text style={styles.testwst}>{button_name}</Text>
         </TouchableOpacity>

@@ -4,8 +4,8 @@ import Account_Button from './Account_Button';
 
 
 export default login_template_Button = ({navigation, Button_name}) => {
-  const [number1, onChangeNumber1] = React.useState(null);
-  const [number2, onChangeNumber2] = React.useState(null);
+  const [my_username, onChangeNumber1] = React.useState(null);
+  const [my_password, onChangeNumber2] = React.useState(null);
 
   const LoginUser = () => {
     fetch('http://192.168.0.101:80/api/users/login/',{
@@ -14,12 +14,12 @@ export default login_template_Button = ({navigation, Button_name}) => {
         'Content-Type':'application/json'
       },
 
-      body: JSON.stringify({email:number1, password:number2})
+      body: JSON.stringify({username:my_username, password:my_password})
     })
     .then(resp => {
         if (resp.ok)
         {
-            navigation.navigate('Record_Workout', {username:number1})
+            navigation.navigate('Record_Workout', {username:my_username})
         }
         else
         {
@@ -35,14 +35,14 @@ export default login_template_Button = ({navigation, Button_name}) => {
       <TextInput
           style={styles.input}
           onChangeText={onChangeNumber1}
-          value={number1}
+          value={my_username}
           placeholder="Phone/Email"
         />
       <TextInput
           secureTextEntry={true}
           style={styles.input}
           onChangeText={onChangeNumber2}
-          value={number2}
+          value={my_password}
           placeholder="Password"
         />
         <View style={styles.container}>

@@ -22,7 +22,7 @@ const Exercise = ({navigation, route}) => {
       .then(resp => {
       if (resp.ok)
       {
-          navigation.navigate('Record_Workout')
+          navigation.navigate('Record_Workout', {username:""})
       }
       else
       {

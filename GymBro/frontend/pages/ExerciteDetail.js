@@ -17,7 +17,7 @@ function ExerciseDetails(props) {
       if (resp.ok)
       {
         console.log(data)
-        props.navigation.navigate('Progress_History')
+        props.navigation.navigate('Progress_History', {username:""})
       }
       else
       {

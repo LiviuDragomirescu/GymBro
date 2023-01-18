@@ -10,12 +10,12 @@ class RoomSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = ['id', 'email', 'password']
+        fields = ['id', 'email', 'username', 'password']
 
 class UserLoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = ['email', 'password']
+        fields = ['username', 'password']
 
 class ExerciseSerializers(serializers.ModelSerializer):
     class Meta:
