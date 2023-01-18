@@ -1,10 +1,11 @@
-import { ImageBackground, StyleSheet, View} from 'react-native';
+import { ImageBackground, StyleSheet, View, Text} from 'react-native';
 
-export default template_Button = ({navigation, img, Button_type, Button_name}) => {
+export default template_Button = ({navigation, img, Button_type, Button_name, username}) => {
     return (
     <View>
       <ImageBackground source={img} style={styles.image}>
-        <Button_type button_name={Button_name} navigation={navigation}>
+        <Text> PULA MEA MARE E AICI SPER CA SE SCRIE CEVA {username}</Text>
+        <Button_type button_name={Button_name} navigation={navigation} username={username}>
         </Button_type>
       </ImageBackground>
     </View>

@@ -5,10 +5,10 @@ import Progress_Button from '../components/Progress_Button';
 
 const image = require('.././images/Arnold.jpg') ;
 
-const Progress_History = ({navigation}) => {
+const Progress_History = ({navigation, route}) => {
     return (
       <View>
-        <Template_Button navigation={navigation} img={image} Button_type={Progress_Button} Button_name={"Progress History"}></Template_Button>
+        <Template_Button navigation={navigation} img={image} Button_type={Progress_Button} Button_name={"Progress History"} username={route.params.username}></Template_Button>
       </View>
     )
   }

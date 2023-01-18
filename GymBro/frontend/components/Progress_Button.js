@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
 
-export default Test_Button = ({navigation, button_name}) => {
+export default Test_Button = ({navigation, button_name, username}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
@@ -15,7 +15,7 @@ export default Test_Button = ({navigation, button_name}) => {
         <TouchableOpacity
             style={styles.arrow_button}
             onPress={() =>
-                navigation.navigate("Weight_History")
+                navigation.navigate("Weight_History", {username:username})
                     }
         >
         <Text style={styles.arrow_text}>➜</Text>

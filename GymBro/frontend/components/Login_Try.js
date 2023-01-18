@@ -19,7 +19,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
     .then(resp => {
         if (resp.ok)
         {
-            navigation.navigate('Record_Workout')
+            navigation.navigate('Record_Workout', {username:number1})
         }
         else
         {

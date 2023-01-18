@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
 
-export default Record_Workout_Button = ({navigation, button_name}) => {
+export default Record_Workout_Button = ({navigation, button_name, username}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
@@ -15,7 +15,7 @@ export default Record_Workout_Button = ({navigation, button_name}) => {
         <TouchableOpacity
             style={styles.arrow_button}
             onPress={() =>
-                navigation.navigate("Progress_History")
+                navigation.navigate("Progress_History", {username:username})
                     }
         >
         <Text style={styles.arrow_text}>➜</Text>
