@@ -1,10 +1,18 @@
-import { ImageBackground, StyleSheet, View, Text} from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, Image} from 'react-native';
+
+
+const Menu = () => {
+  return <View style={styles.menu} />;
+};
 
 export default template_Button = ({navigation, img, Button_type, Button_name, username}) => {
     return (
     <View>
       <ImageBackground source={img} style={styles.image}>
-        <Text> PULA MEA MARE E AICI SPER CA SE SCRIE CEVA {username}</Text>
+        <View style={styles.menu}>
+          <Image source={require('.././images/logofinal.png')} style={styles.logo}></Image>
+          <Text style={styles.text}> Welcome, {username} 💪</Text>
+        </View>
         <Button_type button_name={Button_name} navigation={navigation} username={username}>
         </Button_type>
       </ImageBackground>
@@ -13,10 +21,33 @@ export default template_Button = ({navigation, img, Button_type, Button_name, us
 }
 
 const styles = StyleSheet.create({
+  menu: {
+    width: '100%',
+    height: 48,
+    backgroundColor: 'rgba(52, 52, 0, 0)',
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#ffff00'
+  },
   image: {
-      resizeMode: 'cover',
+      resizeMode: 'center',
       justifyContent: 'center',
       width: '100%',
       height: '100%'
+      
+    },
+    text: {
+     alignContent: 'center',
+     justifyContent: 'center',
+     fontSize: 20,
+     fontWeight: "bold", 
+     color: "#ffff00",
+     left: 60,
+     top: -35
+    },
+    logo: {
+      height: 45,
+      width: 45,
+      
     },
 });
