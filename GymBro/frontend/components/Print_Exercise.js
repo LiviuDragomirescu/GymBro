@@ -8,7 +8,7 @@ function Print_Exercise({navigation}) {
   const [data, setData] = useState(null)
 
     useEffect (() => {
-      fetch('http://192.168.0.101:80/api/exercise/',{
+      fetch('http://192.168.0.111:80/api/exercise/',{
         method:"GET"
       })
       .then(resp => resp.json())
@@ -26,13 +26,18 @@ function Print_Exercise({navigation}) {
     const renderData = (item) => {
       return (
         <Card style = {styles.cardstyle} onPress = {() => clickedItem(item)}>
-          <Text style={{fontSize:25}}>{item.exercise_name}</Text>
+          <Text style={{fontSize:25, color:'black'}}>{item.exercise_name} ➜</Text>
         </Card>
       )
     }
 
     return (
         <SafeAreaView style={styles.container}>
+          <Text style={styles.baseText}>Gym
+            <Text style={styles.innerText}>Bro </Text>
+            </Text>
+        <Text style={styles.text}>Your  
+        <Text style={styles.innerText}> Exercises:</Text></Text>
         <FlatList 
           data = {data}
           renderItem = {({item}) => {
@@ -48,14 +53,40 @@ function Print_Exercise({navigation}) {
 
   const styles = StyleSheet.create({
     container: {
+      backgroundColor: 'black',
       flex: 1,
-      padding: 50,
+      padding: 20,
     },
     item: {
       padding: 20,
       fontSize: 15,
       marginTop: 5,
-    }
+    },
+    cardstyle: {
+      top: 20,
+      backgroundColor: '#ffff3f',
+      padding: 12,
+      marginVertical: 10,
+      marginHorizontal: 16,
+      borderRadius: 6
+      
+    },
+    baseText: {
+      top: 10,
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize:24,
+      textAlign: 'center'
+  },
+  innerText: {
+      color: 'yellow'
+    },
+  text: {
+      top: 20,
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize:24,
+  },
   });
   
 

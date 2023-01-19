@@ -11,7 +11,7 @@ const Exercise = ({navigation, route}) => {
   const [number4, onChangeNumber4] = React.useState(null);
 
   const InsertExercise = () => {
-      fetch('http://192.168.0.101:80/api/exercise/',{
+      fetch('http://192.168.0.111:80/api/exercise/',{
         method:"POST",
         headers: {
           'Content-Type':'application/json'

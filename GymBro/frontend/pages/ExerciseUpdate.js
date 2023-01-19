@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, TextInput, Alert } from 'react-native';
+import { View, StyleSheet, Image, TextInput, Alert, Text } from 'react-native';
 import { Button } from 'react-native-paper';
 
 const logobun_image = require('.././images/logobun.png') ;
@@ -12,7 +12,7 @@ const ExerciseUpdate = (props) => {
     const [reps, onChangeNumber3] = React.useState(data.reps)
 
   const updateExercise = () => {
-      fetch(`http://192.168.0.101:80/api/exercise/${data.id}/`,{
+      fetch(`http://192.168.0.111:80/api/exercise/${data.id}/`,{
         method:"PUT",
         headers: {
           'Content-Type':'application/json'
@@ -36,6 +36,9 @@ const ExerciseUpdate = (props) => {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.baseText}>Gym
+            <Text style={styles.innerText}>Bro </Text>
+            </Text>
         <TextInput
           style={styles.input}
           value={weight}
@@ -64,6 +67,8 @@ const ExerciseUpdate = (props) => {
           />
             </View>
             <Button
+            buttonColor = 'yellow'
+            textColor = 'black'
             icon = "update"
             mode = "contained"
             onPress = {() => updateExercise()} >
@@ -80,8 +85,10 @@ const ExerciseUpdate = (props) => {
       paddingHorizontal: 10
     },
     input: {
+      top:15,
       left: 10,
       height: 40,
+      width: 350,
       margin: 12,
       borderWidth: 1,
       padding: 10,
@@ -90,6 +97,7 @@ const ExerciseUpdate = (props) => {
       backgroundColor:"#ffffff"
     },
     sets_input: {
+      top:30,
       height: 100,
       width:100,
       margin: 12,
@@ -100,6 +108,7 @@ const ExerciseUpdate = (props) => {
       backgroundColor:"#ffffff"
     },
     reps_input: {
+      top:30,
       height: 100,
       width:100,
       margin: 12,
@@ -116,9 +125,20 @@ const ExerciseUpdate = (props) => {
       paddingHorizontal: 10
     },
     small_logo:{
+      top:30,
       margin: 12,
       width: 100,
       height: 100,
+  },
+  baseText: {
+    top: 10,
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize:24,
+    textAlign: 'center'
+},
+innerText: {
+    color: 'yellow'
   },
   });
 

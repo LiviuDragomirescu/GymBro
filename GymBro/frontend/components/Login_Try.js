@@ -8,7 +8,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
   const [my_password, onChangeNumber2] = React.useState(null);
 
   const LoginUser = () => {
-    fetch('http://192.168.0.101:80/api/users/login/',{
+    fetch('http://192.168.0.111:80/api/users/login/',{
       method:"POST",
       headers: {
         'Content-Type':'application/json'
