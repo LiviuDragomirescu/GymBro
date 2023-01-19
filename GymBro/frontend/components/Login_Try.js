@@ -1,6 +1,9 @@
 import React from 'react';
 import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import Account_Button from './Account_Button';
+import Forgot_Pass from './Forgot_Pass';
+import Forgot_Button from './Forgot_Pass';
+
 
 
 export default login_template_Button = ({navigation, Button_name}) => {
@@ -54,9 +57,9 @@ export default login_template_Button = ({navigation, Button_name}) => {
         </TouchableOpacity>
         
         </View>
-        <Text style={{ color: 'white', top: -30, left: 140} }> Forgot Password? </Text>
         <Image source={require('.././images/facebook.png') } style={styles.logo2}/>
         <Image source={require('.././images/google.png') } style={styles.logo3}/>
+        <Forgot_Button button_name={'Forgot Password?'}></Forgot_Button>
         <Account_Button button_name={'Don`t have an account?'} navigation={navigation}>
         </Account_Button>
       </ImageBackground>
