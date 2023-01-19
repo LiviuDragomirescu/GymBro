@@ -8,7 +8,7 @@ export default register_template_Button = ({navigation, img, button_name}) => {
   const [number3, onChangeNumber3] = React.useState(null);
 
   const InsertUser = () => {
-    fetch('http://192.168.0.111:80/api/users/',{
+    fetch('http://192.168.0.101:80/api/users/',{
       method:"POST",
       headers: {
         'Content-Type':'application/json'

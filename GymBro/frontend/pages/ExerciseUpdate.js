@@ -12,7 +12,7 @@ const ExerciseUpdate = (props) => {
     const [reps, onChangeNumber3] = React.useState(data.reps)
 
   const updateExercise = () => {
-      fetch(`http://192.168.0.111:80/api/exercise/${data.id}/`,{
+      fetch(`http://192.168.0.101:80/api/exercise/${data.id}/`,{
         method:"PUT",
         headers: {
           'Content-Type':'application/json'

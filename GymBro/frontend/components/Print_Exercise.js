@@ -8,7 +8,7 @@ function Print_Exercise({navigation}) {
   const [data, setData] = useState(null)
 
     useEffect (() => {
-      fetch('http://192.168.0.111:80/api/exercise/',{
+      fetch('http://192.168.0.101:80/api/exercise/',{
         method:"GET"
       })
       .then(resp => resp.json())

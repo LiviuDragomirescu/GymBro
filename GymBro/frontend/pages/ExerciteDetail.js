@@ -7,7 +7,7 @@ function ExerciseDetails(props) {
     const data = props.route.params.data;
 
     const deleteData = () => {
-        fetch(`http://192.168.0.111:80/api/exercise/${data.id}/`,{
+        fetch(`http://192.168.0.101:80/api/exercise/${data.id}/`,{
         method:"DELETE",
         headers: {
           'Content-Type':'application/json'
@@ -48,7 +48,7 @@ function ExerciseDetails(props) {
             <Button
                 buttonColor='yellow'
                 textColor='black'
-                icon = "update"
+                // icon = "update"
                 mode = "contained"
                 onPress = {() => props.navigation.navigate("Update", {data:data})} >
             Edit
@@ -57,7 +57,7 @@ function ExerciseDetails(props) {
             <Button
                 buttonColor='yellow'
                 textColor='black'
-                icon = "Delete"
+                // icon = "delete"
                 mode = "contained"
                 onPress = {() => deleteData()} >
             Delete
