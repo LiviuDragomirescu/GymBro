@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageBackground, Alert, StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import { httpsUrl } from '../constants/HttpUrl';
 
 export default register_template_Button = ({navigation, img, button_name}) => {
   const [number0, onChangeNumber0] = React.useState(null);
@@ -8,7 +9,7 @@ export default register_template_Button = ({navigation, img, button_name}) => {
   const [number3, onChangeNumber3] = React.useState(null);
 
   const InsertUser = () => {
-    fetch('http://192.168.0.101:80/api/users/',{
+    fetch(`${httpsUrl}/users/`,{
       method:"POST",
       headers: {
         'Content-Type':'application/json'

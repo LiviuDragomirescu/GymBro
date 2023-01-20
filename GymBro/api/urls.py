@@ -8,5 +8,4 @@ urlpatterns = [
     path("exercise/", ExerciseList.as_view()),
     path("exercise/print/", print_exercise_as_id),
     path("exercise/<int:id>/", ExerciseDetail.as_view()),
-    path("users/<int:id>/", ExerciseDetail.as_view()),
 ]

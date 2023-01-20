@@ -2,13 +2,14 @@ import React from 'react';
 import { useState , useEffect} from "react";
 import { Text , FlatList, Alert, StyleSheet, SafeAreaView} from "react-native";
 import {Card} from 'react-native-paper'
+import { httpsUrl } from '../constants/HttpUrl';
 
 function Print_Exercise({navigation, user_id}) {
 
   const [data, setData] = useState(null)
 
     useEffect (() => {
-      fetch('http://192.168.0.101:80/api/exercise/print/',{
+      fetch(`${httpsUrl}/exercise/print/`,{
         method:"POST",
         headers: {
           'Content-Type':'application/json'

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Text , Alert, View, StyleSheet, Image,} from "react-native";
 import {Button} from 'react-native-paper'
+import { httpsUrl } from '../constants/HttpUrl';
 
 function ExerciseDetails(props) {
 
     const data = props.route.params.data;
 
     const deleteData = () => {
-        fetch(`http://192.168.0.101:80/api/exercise/${data.id}/`,{
+        fetch(`${httpsUrl}/exercise/${data.id}/`,{
         method:"DELETE",
         headers: {
           'Content-Type':'application/json'

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { httpsUrl } from '../constants/HttpUrl';
 
 const logofinal_image = require('.././images/logofinal.png') ;
 const logobun_image = require('.././images/logobun.png') ;
@@ -11,7 +12,7 @@ const Exercise = ({navigation, route}) => {
   const [number4, onChangeNumber4] = React.useState(null);
 
   const InsertExercise = () => {
-      fetch('http://192.168.0.101:80/api/exercise/',{
+      fetch(`${httpsUrl}/exercise/`,{
         method:"POST",
         headers: {
           'Content-Type':'application/json'

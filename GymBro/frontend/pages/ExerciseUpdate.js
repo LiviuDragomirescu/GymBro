@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image, TextInput, Alert, Text } from 'react-native';
 import { Button } from 'react-native-paper';
+import { httpsUrl } from '../constants/HttpUrl';
 
 const logobun_image = require('.././images/logobun.png') ;
 
@@ -12,7 +13,7 @@ const ExerciseUpdate = (props) => {
     const [reps, onChangeNumber3] = React.useState(data.reps)
 
   const updateExercise = () => {
-      fetch(`http://192.168.0.101:80/api/exercise/${data.id}/`,{
+      fetch(`${httpsUrl}/exercise/${data.id}/`,{
         method:"PUT",
         headers: {
           'Content-Type':'application/json'

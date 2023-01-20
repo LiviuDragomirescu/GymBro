@@ -3,7 +3,7 @@ import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpa
 import Account_Button from './Account_Button';
 import Forgot_Pass from './Forgot_Pass';
 import Forgot_Button from './Forgot_Pass';
-
+import { httpsUrl } from '../constants/HttpUrl';
 
 
 export default login_template_Button = ({navigation, Button_name}) => {
@@ -18,7 +18,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
 });
 
   function LoginUser() {
-    fetch('http://192.168.0.101:80/api/users/login/',{
+    fetch(`${httpsUrl}/users/login/`,{
       method:"POST",
       headers: {
         'Content-Type':'application/json'

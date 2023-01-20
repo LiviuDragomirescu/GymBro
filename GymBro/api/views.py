@@ -75,14 +75,14 @@ def find_user(request):
             # print(MyUser.objects.all().get(email=email))
 
             userrr = MyUser.objects.all().get(email=email)
-            print(userrr.password)
+            # print(userrr.password)
             is_verified = django_pbkdf2_sha256.verify(password, userrr.password)
             print(is_verified)
             if is_verified==False:
                 print(MyUser.objects.all().filter(email=email))
                 return Response("Incorrect Password/Username", status=status.HTTP_404_NOT_FOUND)
 
-            print(userrr)
+            # print(userrr)
             return Response(UserSerializer(userrr).data, status=status.HTTP_200_OK)
         print(user_dto.errors)
     return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
@@ -93,14 +93,14 @@ def find_user(request):
 def print_exercise_as_id(request):
     if request.method == 'POST':
         serz_data = ExerciseSerializers(data=request.data)
-        print(serz_data)
+        # print(serz_data)
         if (serz_data.is_valid() ):
             my_user_id = serz_data.data.get('id_for_user')
-            print(my_user_id)
+            # print(my_user_id)
             if my_user_id is None:
                 my_user_id = 4
             exs = Exercise.objects.all().filter(id_for_user=my_user_id)
-            print(exs)
+            # print(exs)
             exs_dto = ExerciseSerializers(exs, many=True)
             return Response(exs_dto.data, status=status.HTTP_202_ACCEPTED)
     return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
