@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics, mixins
-from .models import Room, MyUser, Exercise
+from .models import Room, User, Exercise
 from .serializers import RoomSerializer, UserSerializer, ExerciseSerializers, UserLoginSerializer
 from rest_framework.response import Response
 from rest_framework import status
@@ -40,44 +40,14 @@ class ExerciseDetail(generics.GenericAPIView, mixins.RetrieveModelMixin, mixins.
     def delete(self, request, id):
         return self.destroy(request, id=id)
 
-@csrf_exempt
-@api_view(['GET', 'POST'])
-def get_all_create_user(request):
-    if request.method == 'GET':
-        return get_all_users(request)
-    elif request.method == 'POST':
-        return create_user(request)
-    return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
+class UserList(generics.GenericAPIView, mixins.ListModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    def get(self, request):
+        return self.list(request)
+    def post(self, request):
+        return self.create(request)
 
-
-@permission_classes([AllowAny])
-def get_all_users(request):
-    if request.method == 'GET':
-        users = MyUser.objects.all()
-        user_dto = UserSerializer(users, many=True)
-        return Response(user_dto.data)
-    return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
-
-
-@permission_classes([AllowAny])
-def create_user(request):
-    if request.method == 'POST':
-        user_dto = UserSerializer(data=request.data)
-        print(user_dto)
-        if user_dto.is_valid():
-            username = user_dto.data.get('username')
-            password = user_dto.data.get('password')
-            email = user_dto.data.get('email')
-            user = MyUser(email=email, username=username)
-            user.set_password(password)
-            user.save()
-            return Response("User has been created!", status=status.HTTP_200_OK)
-        print(user_dto.errors)
-        return Response('User DTO not VALID OR ALREADY EXISTS(e.g. admin mindfuck)', status=status.HTTP_409_CONFLICT)
-    return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
-
-
-@csrf_exempt
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def find_user(request):
@@ -85,15 +55,14 @@ def find_user(request):
         user_dto = UserLoginSerializer(data=request.data)
         print(user_dto)
         if user_dto.is_valid():
-            # email = user_dto.data.get('email')
-            username = user_dto.data.get('username')
+            email = user_dto.data.get('email')
             password = user_dto.data.get('password')
-            found_user = authenticate(username=username, password=password)
-            print(username, password)
-            print(MyUser.objects.all())
-            if found_user is not None:
-                print(MyUser.objects.all().filter(username=username))
-                return Response("Incorrect Password/email", status=status.HTTP_404_NOT_FOUND)
-            return Response(UserSerializer(found_user).data, status=status.HTTP_200_OK)
+            print(User.objects.all())
+            if not User.objects.filter(email=email, password=password).exists():
+                print(User.objects.all().filter(email=email))
+                return Response("Incorrect Password/Username", status=status.HTTP_404_NOT_FOUND)
+            print(User.objects.get(email=email, password=password))
+            print(UserSerializer(User.objects.get(email=email, password=password)).data)
+            return Response(UserSerializer(User.objects.get(email=email, password=password)).data, status=status.HTTP_200_OK)
         print(user_dto.errors)
     return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)

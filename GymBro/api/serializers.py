@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Room, MyUser, Exercise
+from .models import Room, User, Exercise
 
 
 class RoomSerializer(serializers.ModelSerializer):
@@ -9,13 +9,13 @@ class RoomSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MyUser
+        model = User
         fields = ['id', 'email', 'username', 'password']
 
 class UserLoginSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MyUser
-        fields = ['username', 'password']
+        model = User
+        fields = ['id', 'email', 'password']
 
 class ExerciseSerializers(serializers.ModelSerializer):
     class Meta:

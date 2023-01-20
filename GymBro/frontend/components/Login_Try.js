@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import Account_Button from './Account_Button';
 import Forgot_Pass from './Forgot_Pass';
@@ -10,6 +10,13 @@ export default login_template_Button = ({navigation, Button_name}) => {
   const [my_username, onChangeNumber1] = React.useState(null);
   const [my_password, onChangeNumber2] = React.useState(null);
 
+  const [user, setUser] = useState({
+    id:"",
+    email:"",
+    username: "",
+    password: "",
+});
+
   const LoginUser = () => {
     fetch('http://192.168.0.101:80/api/users/login/',{
       method:"POST",
@@ -17,18 +24,25 @@ export default login_template_Button = ({navigation, Button_name}) => {
         'Content-Type':'application/json'
       },
 
-      body: JSON.stringify({username:my_username, password:my_password})
+      body: JSON.stringify({email:my_username, password:my_password})
     })
-    .then(resp => {
-        if (resp.ok)
-        {
-            navigation.navigate('Record_Workout', {username:my_username})
-        }
-        else
-        {
-            Alert.alert("Username or password are incorrect!Try again.")
-        }
-    })
+    .then(resp => resp.json())
+    .then(json => setUser(json))
+    .then(console.log(user.username))
+    .then(navigation.navigate('Record_Workout', {username:user.username}))
+    // .then( resp => {
+    //   if ( json.ok )
+    //   {
+    //       // resp => resp.json()
+    //       // json => setUser(json)
+    //       console.log(user.username)
+    //       //navigation.navigate('Record_Workout', {username:user.username})
+    //   }
+    //   else
+    //   {
+    //     Alert.alert("Username or password are incorrect!Try again.")
+    //   }
+    .catch(error => Alert.alert("Username or password are incorrect!Try again.",error))
     }
 
     return (
