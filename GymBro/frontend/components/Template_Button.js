@@ -5,15 +5,15 @@ const Menu = () => {
   return <View style={styles.menu} />;
 };
 
-export default template_Button = ({navigation, img, Button_type, Button_name, username}) => {
+export default template_Button = ({navigation, img, Button_type, Button_name, username, user_id}) => {
     return (
     <View>
       <ImageBackground source={img} style={styles.image}>
         <View style={styles.menu}>
           <Image source={require('.././images/logofinal.png')} style={styles.logo}></Image>
-          <Text style={styles.text}> Welcome, {username} 💪</Text>
+          <Text style={styles.text}> Welcome, {username} {user_id} 💪</Text>
         </View>
-        <Button_type button_name={Button_name} navigation={navigation} username={username}>
+        <Button_type button_name={Button_name} navigation={navigation} username={username} user_id={user_id}>
         </Button_type>
       </ImageBackground>
     </View>

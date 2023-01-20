@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useEffect, useState} from 'react';
 import { ImageBackground, Image, StyleSheet, View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import Account_Button from './Account_Button';
 import Forgot_Pass from './Forgot_Pass';
@@ -7,7 +7,7 @@ import Forgot_Button from './Forgot_Pass';
 
 
 export default login_template_Button = ({navigation, Button_name}) => {
-  const [my_username, onChangeNumber1] = React.useState(null);
+  const [my_email, onChangeNumber1] = React.useState(null);
   const [my_password, onChangeNumber2] = React.useState(null);
 
   const [user, setUser] = useState({
@@ -24,24 +24,16 @@ export default login_template_Button = ({navigation, Button_name}) => {
         'Content-Type':'application/json'
       },
 
-      body: JSON.stringify({email:my_username, password:my_password})
+      body: JSON.stringify({email:my_email, password:my_password})
     })
     .then(resp => resp.json())
     .then(json => setUser(json))
     .then(console.log(user.username))
-    .then(navigation.navigate('Record_Workout', {username:user.username}))
-    // .then( resp => {
-    //   if ( json.ok )
-    //   {
-    //       // resp => resp.json()
-    //       // json => setUser(json)
-    //       console.log(user.username)
-    //       //navigation.navigate('Record_Workout', {username:user.username})
-    //   }
-    //   else
-    //   {
-    //     Alert.alert("Username or password are incorrect!Try again.")
-    //   }
+    .then(console.log(user.id))
+    .then( resp => {if (user.username) {
+      navigation.navigate('Record_Workout', {username:user.username, user_id:user.id})
+  }})
+    // .then(navigation.navigate('Record_Workout', {username:user.username, user_id:user.id}))
     .catch(error => Alert.alert("Username or password are incorrect!Try again.",error))
     }
 
@@ -52,7 +44,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
       <TextInput
           style={styles.input}
           onChangeText={onChangeNumber1}
-          value={my_username}
+          value={my_email}
           placeholder="Phone/Email"
         />
       <TextInput
@@ -65,7 +57,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
         <View style={styles.container}>
         <TouchableOpacity
             style={styles.loginButton}
-            onPress={() => LoginUser()}
+            onPress={() => {LoginUser()}}
         >
         <Text style={styles.testwst}>{Button_name}</Text>
         </TouchableOpacity>

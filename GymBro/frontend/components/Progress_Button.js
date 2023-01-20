@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
 
-export default Test_Button = ({navigation, button_name, username}) => {
+export default Test_Button = ({navigation, button_name, username, user_id}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
             style={styles.profile_button}
             onPress={() =>
-                navigation.navigate('Profile')
+                navigation.navigate('Profile', {user_id:user_id})
                     }
         >
         <Text style={styles.text_button}>{button_name}</Text>

@@ -10,19 +10,19 @@ const biceps_image = require('.././images/Biceps.png') ;
 const legs_image = require('.././images/Legs.jpg') ;
 const custom_image = require('.././images/Custom.jpg') ;
 
-const Choose_Workout = ({navigation}) => {
+const Choose_Workout = ({navigation, route}) => {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-            Choose your Workout
+            Choose your Workout {route.params.user_id}
         </Text>
-        <Pictures_rand navigation={navigation} imageleft={biceps_image} imageright={abs_image} leftname='Bicep' rightname='Abs'>
+        <Pictures_rand navigation={navigation} imageleft={biceps_image} imageright={abs_image} username={route.params.username} user_id={route.params.user_id} leftname='Bicep' rightname='Abs'>
         </Pictures_rand>
-        <Pictures_rand navigation={navigation} imageleft={shoulder_image} imageright={legs_image} leftname='Shoulder' rightname='Leg'>
+        <Pictures_rand navigation={navigation} imageleft={shoulder_image} imageright={legs_image} username={route.params.username} user_id={route.params.user_id} leftname='Shoulder' rightname='Leg'>
         </Pictures_rand>
-        <Pictures_rand navigation={navigation} imageleft={triceps_image} imageright={back_image} leftname='Tricep' rightname='Back'>
+        <Pictures_rand navigation={navigation} imageleft={triceps_image} imageright={back_image} username={route.params.username} user_id={route.params.user_id} leftname='Tricep' rightname='Back'>
         </Pictures_rand>
-        <Pictures_rand navigation={navigation} imageleft={chest_image} imageright={custom_image} leftname='Chest' rightname='Custom'>
+        <Pictures_rand navigation={navigation} imageleft={chest_image} imageright={custom_image} username={route.params.username} user_id={route.params.user_id} leftname='Chest' rightname='Custom'>
         </Pictures_rand>
       </View>
     )

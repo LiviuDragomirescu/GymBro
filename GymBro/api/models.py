@@ -15,6 +15,7 @@ class Exercise(models.Model):
     weight = models.IntegerField(null=False, default=1)
     sets = models.IntegerField(null=False, default=1)
     reps = models.IntegerField(null=False, default=1)
+    id_for_user = models.IntegerField(null=False, default=1)
 
 class User(models.Model):
     email = models.EmailField(verbose_name='email address', max_length=255)

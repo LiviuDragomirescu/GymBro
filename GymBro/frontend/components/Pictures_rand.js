@@ -1,11 +1,11 @@
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const Pictures_rand = ({navigation, imageleft, imageright, leftname, rightname}) => {
+const Pictures_rand = ({navigation, imageleft, imageright, leftname, rightname, username, user_id}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
             onPress={() =>
-                navigation.navigate('Exercise', { name: leftname })
+                navigation.navigate('Exercise', { name: leftname, username:username, user_id:user_id })
                     }
         >
             <Image
@@ -15,7 +15,7 @@ const Pictures_rand = ({navigation, imageleft, imageright, leftname, rightname})
         </TouchableOpacity>
         <TouchableOpacity
             onPress={() =>
-                navigation.navigate('Exercise', { name: rightname })
+                navigation.navigate('Exercise', { name: rightname, username:username, user_id:user_id })
                     }
         >
             <Image

@@ -66,3 +66,24 @@ def find_user(request):
             return Response(UserSerializer(User.objects.get(email=email, password=password)).data, status=status.HTTP_200_OK)
         print(user_dto.errors)
     return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST', 'GET'])
+@permission_classes([AllowAny])
+def print_exercise_as_id(request):
+    print(request)
+    if request.method == 'POST':
+        print("PLM")
+        serz_data = ExerciseSerializers(data=request.data)
+        print(serz_data)
+        if (serz_data.is_valid() ):
+            print("PLM")
+            my_user_id = serz_data.data.get('id_for_user')
+            print(my_user_id)
+            if my_user_id is None:
+                my_user_id = 4
+            exs = Exercise.objects.all().filter(id_for_user=my_user_id)
+            print(exs)
+            exs_dto = ExerciseSerializers(exs, many=True)
+            return Response(exs_dto.data, status=status.HTTP_202_ACCEPTED)
+    return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)

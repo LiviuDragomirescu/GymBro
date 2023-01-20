@@ -17,12 +17,13 @@ const Exercise = ({navigation, route}) => {
           'Content-Type':'application/json'
         },
 
-        body: JSON.stringify({exercise_name:number1, weight:number4, sets:number3, reps:number2})
+        body: JSON.stringify({exercise_name:number1, weight:number4, sets:number3, reps:number2, id_for_user:route.params.user_id})
       })
       .then(resp => {
       if (resp.ok)
       {
-          navigation.navigate('Record_Workout', {username:""})
+        console.log(route.params.user_id)
+          navigation.navigate('Record_Workout', {username:route.params.username, user_id:route.params.user_id})
       }
       else
       {
@@ -35,7 +36,7 @@ const Exercise = ({navigation, route}) => {
     return (
       <View style={styles.container}>
         <Text style={styles.title_text}>
-            {route.params.name}  <Text style={styles.text2}>Exercise
+            {route.params.name} {route.params.user_id} <Text style={styles.text2}>Exercise
         </Text>
         </Text>
         <TextInput

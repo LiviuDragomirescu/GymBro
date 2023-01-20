@@ -3,13 +3,18 @@ import { useState , useEffect} from "react";
 import { Text , FlatList, Alert, StyleSheet, SafeAreaView} from "react-native";
 import {Card} from 'react-native-paper'
 
-function Print_Exercise({navigation}) {
+function Print_Exercise({navigation, user_id}) {
 
   const [data, setData] = useState(null)
 
     useEffect (() => {
-      fetch('http://192.168.0.101:80/api/exercise/',{
-        method:"GET"
+      fetch('http://192.168.0.101:80/api/exercise/plm/',{
+        method:"POST",
+        headers: {
+          'Content-Type':'application/json'
+        },
+  
+        body: JSON.stringify({id_for_user:user_id})
       })
       .then(resp => resp.json())
     //   .then(console.log(data))

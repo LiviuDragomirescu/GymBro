@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
 
-export default Record_Workout_Button = ({navigation, button_name, username}) => {
+export default Record_Workout_Button = ({navigation, button_name, username, user_id}) => {
     return (
         <View style={styles.container}>
         <TouchableOpacity
             style={styles.choose_button}
             onPress={() =>
-                navigation.navigate('Choose_Workout')
+                navigation.navigate('Choose_Workout', {username:username, user_id:user_id})
                     }
         >
         <Text style={styles.text_button}>{button_name}</Text>
@@ -15,7 +15,7 @@ export default Record_Workout_Button = ({navigation, button_name, username}) => 
         <TouchableOpacity
             style={styles.arrow_button}
             onPress={() =>
-                navigation.navigate("Progress_History", {username:username})
+                navigation.navigate("Progress_History", {username:username, user_id:user_id})
                     }
         >
         <Text style={styles.arrow_text}>➜</Text>
