@@ -24,7 +24,7 @@ const ExerciseUpdate = (props) => {
       if (resp.ok)
       {
         console.log(data)
-        props.navigation.navigate('Progress_History',{username:""})
+        props.navigation.navigate('Progress_History',{user_id:data.id_for_user})
       }
       else
       {

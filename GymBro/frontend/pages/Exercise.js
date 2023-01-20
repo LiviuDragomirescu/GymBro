@@ -36,7 +36,7 @@ const Exercise = ({navigation, route}) => {
     return (
       <View style={styles.container}>
         <Text style={styles.title_text}>
-            {route.params.name} {route.params.user_id} <Text style={styles.text2}>Exercise
+            {route.params.name} <Text style={styles.text2}>Exercise
         </Text>
         </Text>
         <TextInput

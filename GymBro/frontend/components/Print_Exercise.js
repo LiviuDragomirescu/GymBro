@@ -17,7 +17,7 @@ function Print_Exercise({navigation, user_id}) {
         body: JSON.stringify({id_for_user:user_id})
       })
       .then(resp => resp.json())
-    //   .then(console.log(data))
+      .then(console.log(data))
       .then(data => {
         setData(data)
       })

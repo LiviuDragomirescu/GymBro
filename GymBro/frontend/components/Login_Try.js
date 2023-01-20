@@ -17,7 +17,7 @@ export default login_template_Button = ({navigation, Button_name}) => {
     password: "",
 });
 
-  const LoginUser = () => {
+  function LoginUser() {
     fetch('http://192.168.0.101:80/api/users/login/',{
       method:"POST",
       headers: {
@@ -26,15 +26,28 @@ export default login_template_Button = ({navigation, Button_name}) => {
 
       body: JSON.stringify({email:my_email, password:my_password})
     })
-    .then(resp => resp.json())
-    .then(json => setUser(json))
-    .then(console.log(user.username))
-    .then(console.log(user.id))
-    .then( resp => {if (user.username) {
-      navigation.navigate('Record_Workout', {username:user.username, user_id:user.id})
-  }})
-    // .then(navigation.navigate('Record_Workout', {username:user.username, user_id:user.id}))
-    .catch(error => Alert.alert("Username or password are incorrect!Try again.",error))
+    .then((response) => response.json())
+    .then((responseData) => {
+      // console.log(responseData)
+      // console.log(responseData.username)
+      if ( responseData.username )
+      {
+        navigation.navigate('Record_Workout', {username:responseData.username, user_id:responseData.id})
+        return responseData
+      }
+      else
+      {
+        Alert.alert("Username or password are incorrect!Try again.")
+      }
+    })
+    // .catch(error => Alert.alert("Username or password are incorrect!Try again.",error))
+  //   .then(json => setUser(json))
+  //   .then(console.log(user.username))
+  //   .then(console.log(user.id))
+  //   .then( resp => {if (user.username) {
+  //     navigation.navigate('Record_Workout', {username:user.username, user_id:user.id})
+  // }})
+  //   .catch(error => Alert.alert("Username or password are incorrect!Try again.",error))
     }
 
     return (

@@ -14,7 +14,7 @@ const Choose_Workout = ({navigation, route}) => {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-            Choose your Workout {route.params.user_id}
+            Choose your Workout
         </Text>
         <Pictures_rand navigation={navigation} imageleft={biceps_image} imageright={abs_image} username={route.params.username} user_id={route.params.user_id} leftname='Bicep' rightname='Abs'>
         </Pictures_rand>

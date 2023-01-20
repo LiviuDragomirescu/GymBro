@@ -11,7 +11,7 @@ export default template_Button = ({navigation, img, Button_type, Button_name, us
       <ImageBackground source={img} style={styles.image}>
         <View style={styles.menu}>
           <Image source={require('.././images/logofinal.png')} style={styles.logo}></Image>
-          <Text style={styles.text}> Welcome, {username} {user_id} 💪</Text>
+          <Text style={styles.text}> Welcome, {username} 💪</Text>
         </View>
         <Button_type button_name={Button_name} navigation={navigation} username={username} user_id={user_id}>
         </Button_type>
