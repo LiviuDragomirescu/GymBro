@@ -6,7 +6,7 @@ export default Home_Button = ({navigation, button_name}) => {
         <TouchableOpacity
             style={styles.button}
             onPress={() =>
-                navigation.navigate('Record_Workout', {username:""})
+                navigation.navigate('Login')
                     }
         >
         <Text style={styles.text}>{button_name}</Text>

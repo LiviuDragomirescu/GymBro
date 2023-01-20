@@ -1,13 +1,13 @@
 from django.urls import path
-from .views import RoomView, UserList, ExerciseList, ExerciseDetail, find_user, print_exercise_as_id
+from .views import RoomView, UserList, ExerciseList, ExerciseDetail, find_user, print_exercise_as_id, UserDetail
 
 urlpatterns = [
     path("room", RoomView.as_view()),
     path("users/", UserList.as_view()),
     path("users/login/",find_user),
-    # path("users/<int:id>/", UserDetail.as_view()),
+    path("users/<int:id>/", UserDetail.as_view()),
     path("exercise/", ExerciseList.as_view()),
-    path("exercise/plm/", print_exercise_as_id),
+    path("exercise/print/", print_exercise_as_id),
     path("exercise/<int:id>/", ExerciseDetail.as_view()),
     path("users/<int:id>/", ExerciseDetail.as_view()),
 ]

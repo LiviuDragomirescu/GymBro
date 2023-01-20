@@ -48,6 +48,22 @@ class UserList(generics.GenericAPIView, mixins.ListModelMixin, mixins.UpdateMode
     def post(self, request):
         return self.create(request)
 
+class UserDetail(generics.GenericAPIView, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    lookup_field = 'id'
+
+    def get(self, request, id):
+        return self.retrieve(request, id=id)
+    
+    def put(self, request, id):
+        return self.update(request, id=id)
+
+    def delete(self, request, id):
+        return self.destroy(request, id=id)
+
+
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def find_user(request):

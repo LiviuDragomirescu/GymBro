@@ -8,7 +8,7 @@ function Print_Exercise({navigation, user_id}) {
   const [data, setData] = useState(null)
 
     useEffect (() => {
-      fetch('http://192.168.0.101:80/api/exercise/plm/',{
+      fetch('http://192.168.0.101:80/api/exercise/print/',{
         method:"POST",
         headers: {
           'Content-Type':'application/json'
