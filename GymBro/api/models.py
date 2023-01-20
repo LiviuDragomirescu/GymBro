@@ -15,7 +15,7 @@ class MyUser(models.Model):
     password = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.email + self.username
+        return self.email + self.username + self.password
 
     def getUsername(self):
         return self.username

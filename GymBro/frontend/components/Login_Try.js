@@ -28,8 +28,8 @@ export default login_template_Button = ({navigation, Button_name}) => {
     })
     .then((response) => response.json())
     .then((responseData) => {
-      // console.log(responseData)
-      // console.log(responseData.username)
+      console.log(responseData)
+      console.log(responseData.username)
       if ( responseData.username )
       {
         navigation.navigate('Record_Workout', {username:responseData.username, user_id:responseData.id})

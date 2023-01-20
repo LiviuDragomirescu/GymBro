@@ -18,7 +18,7 @@ export default Test_Button = ({navigation, button_name, username}) => {
                 navigation.navigate("Login")
                     }
         >
-        <Text style={styles.arrow_text}Log Out>➜</Text>
+        <Text style={styles.arrow_text}>       Log Out ➜ </Text>
         </TouchableOpacity>
         </View>
     )
@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
         borderColor: '#ffff00'
       },
       arrow_button:{
-        width: 70,
-        height: 70,
-        left: 160,
+        width: 266,
+        height: 66,
+        left: 66,
         top: 200,
         justifyContent: "center", 
         alignContent: "center",
@@ -65,8 +65,9 @@ const styles = StyleSheet.create({
     arrow_text: {
         top: -1,
         left: 15,
+        fontWeight:'bold',
         alignContent: "center",
         color: "#ffff00", 
-        fontSize: 34
+        fontSize: 30
   }
   });

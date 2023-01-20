@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from django.views.decorators.csrf import csrf_exempt
+from passlib.handlers.django import django_pbkdf2_sha256
 
 # Create your views here.
 
@@ -60,6 +61,7 @@ class UserDetail(generics.GenericAPIView, mixins.RetrieveModelMixin, mixins.Upda
         return self.destroy(request, id=id)
 
 
+@csrf_exempt
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def find_user(request):
@@ -69,13 +71,19 @@ def find_user(request):
         if user_dto.is_valid():
             email = user_dto.data.get('email')
             password = user_dto.data.get('password')
-            # print(MyUser.objects.all())
-            if not MyUser.objects.filter(email=email, password=password).exists():
-                # print(MyUser.objects.all().filter(email=email))
+
+            # print(MyUser.objects.all().get(email=email))
+
+            userrr = MyUser.objects.all().get(email=email)
+            print(userrr.password)
+            is_verified = django_pbkdf2_sha256.verify(password, userrr.password)
+            print(is_verified)
+            if is_verified==False:
+                print(MyUser.objects.all().filter(email=email))
                 return Response("Incorrect Password/Username", status=status.HTTP_404_NOT_FOUND)
-            # print(MyUser.objects.get(email=email, password=password))
-            # print(UserSerializer(MyUser.objects.get(email=email, password=password)).data)
-            return Response(UserSerializer(MyUser.objects.get(email=email, password=password)).data, status=status.HTTP_200_OK)
+
+            print(userrr)
+            return Response(UserSerializer(userrr).data, status=status.HTTP_200_OK)
         print(user_dto.errors)
     return Response('BAD REQUEST', status=status.HTTP_400_BAD_REQUEST)
 
