@@ -18,7 +18,7 @@ export default Test_Button = ({navigation, button_name, username}) => {
                 navigation.navigate("Login")
                     }
         >
-        <Text style={styles.arrow_text}>➜</Text>
+        <Text style={styles.arrow_text}Log Out>➜</Text>
         </TouchableOpacity>
         </View>
     )
